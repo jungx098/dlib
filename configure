@@ -3192,6 +3192,12 @@ if test -n "$GCC"; then
     CFLAGS="$CFLAGS -Wall -W"
 fi
 
+if test "$(uname)" = "Darwin"; then
+    # Do something for Mac OS X platform
+    CFLAGS="$CFLAGS -I/opt/local/include/"
+    echo $CFLAGS
+fi
+
 # Checks for libraries.
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for socket in -lsocket" >&5
 $as_echo_n "checking for socket in -lsocket... " >&6; }

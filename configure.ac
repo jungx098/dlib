@@ -20,6 +20,12 @@ if test -n "$GCC"; then
     CFLAGS="$CFLAGS -Wall -W"
 fi
 
+if test "$(uname)" = "Darwin"; then
+    # Do something for Mac OS X platform
+    CFLAGS="$CFLAGS -I/opt/local/include/"
+    echo $CFLAGS
+fi
+
 # Checks for libraries.
 AC_CHECK_LIB(socket, socket)
 AC_CHECK_LIB(m, sqrt)
